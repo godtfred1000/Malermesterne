@@ -62,3 +62,48 @@
   .photo-story-large{grid-row:auto;min-height:360px!important}
   .photo-story-grid figure{min-height:280px}
 }
+
+/* Stort bakgrunnsbilde rundt de to inngangsboksene */
+.portal-choice{
+  position:relative;
+  isolation:isolate;
+  background:
+    linear-gradient(90deg,rgba(247,244,237,.94),rgba(237,243,247,.88)),
+    url("../images/maler-hero.png") center 42%/cover no-repeat;
+  overflow:hidden;
+}
+.portal-choice::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 18% 72%,rgba(244,196,67,.32),transparent 28%),
+    radial-gradient(circle at 84% 70%,rgba(38,95,174,.22),transparent 30%);
+}
+.portal-choice .container{
+  position:relative;
+  z-index:1;
+}
+.portal-intro{
+  text-shadow:0 1px 0 rgba(255,255,255,.85);
+}
+.portal-grid{
+  padding:18px;
+  border-radius:34px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(3px);
+  box-shadow:0 24px 80px rgba(9,30,48,.13);
+}
+.portal-card{
+  background:rgba(255,255,255,.96);
+  border-color:rgba(255,255,255,.9);
+}
+@media(max-width:650px){
+  .portal-choice{
+    background:
+      linear-gradient(rgba(247,244,237,.93),rgba(237,243,247,.91)),
+      url("../images/maler-hero.png") 64% center/cover no-repeat;
+  }
+  .portal-grid{padding:10px;border-radius:25px}
+}
